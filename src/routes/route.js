@@ -65,14 +65,16 @@ router.post("/write-file-aws", async function(req, res){
 })
 
 
-
+//----------------------- user api-----------------------------------//
 router.post("/register", userController.createuser)
 router.post("/login",userController.userLogin)
+// --------------------- book api---------------------------//
 router.post("/books", middleware.authentication,middleware.authorisation ,bookController.createBook)
 router.get("/books",middleware.authentication,bookController.getBook)
 router.get("/books/:bookId",middleware.authentication,bookController.Bookbyparams)
 router.put("/books/:bookId",middleware.authentication,middleware.authorise,bookController.updateBook)
 router.delete("/books/:bookId",middleware.authentication,middleware.authorise,bookController.deleteBookByParams)
+// ---------------------------------------------review api-----------------------------------------------//
 router.post("/books/:bookId/review",reviewController.createReview)
 router.put("/books/:bookId/review/:reviewId",reviewController.updatereview )
 router.delete('/books/:bookId/review/:reviewId', reviewController.deleteReview)

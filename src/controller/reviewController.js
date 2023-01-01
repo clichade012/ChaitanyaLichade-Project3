@@ -1,7 +1,6 @@
 const bookModel = require("../models/booksModel")
-// const userModel = require("../models/userModel")
 const reviewModel = require("../models/ReviewModel")
-const { isvalidObjectId, isValidRating, isValidName, isValidDate, isValid, isValidBody } = require("../validator/validator")
+const { isvalidObjectId, isValidRating, isValidName, isValidDate, isValidBody } = require("../validator/validator")
 
 
 

@@ -35,7 +35,7 @@ const isvalidObjectId = function (objectId) {
     return mongoose.Types.ObjectId.isValid(objectId)
 };
 const isValidISBN = function (value) {
-    const Regex = /^(?:ISBN(?:-13)?:? )?(?=[0-9]{13}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)97[89][- ]?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9]$/
+    const Regex = /^[6-9]{3}[\-][\d]{10}$/
     return Regex.test(value);
 }
 const validTitle = function (value) {

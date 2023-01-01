@@ -1,8 +1,5 @@
 const bookModel = require("../models/booksModel")
-const userModel = require("../models/userModel")
 const reviewModel = require("../models/ReviewModel")
-const aws = require('aws-sdk')
-
 const { isValid, isValidISBN, isvalidObjectId, isValidName, isValidDate, isValidMixed } = require("../validator/validator")
 
 
@@ -13,9 +10,6 @@ const createBook = async function (req, res) {
     try {
         let data = req.body;
         const { title, excerpt, ISBN, category, subcategory, releasedAt } = data;
-
-
-        
 
         if (Object.keys(data).length == 0) {
             return res.status(400).send({ status: false, message: "Body is Empty,please provide data" })
